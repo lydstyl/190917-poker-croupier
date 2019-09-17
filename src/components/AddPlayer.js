@@ -1,9 +1,14 @@
 import React from 'react';
 
-const AddPlayer = () => {
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { addPlayer } from '../actions/playerActions';
+
+const AddPlayer = ({ addPlayer }) => {
   const onAdd = () => {
     console.log('addPlayer');
     // if 12 players display none
+    addPlayer({ name: 'coco', cards: [] });
   };
 
   return (
@@ -13,4 +18,11 @@ const AddPlayer = () => {
   );
 };
 
-export default AddPlayer;
+AddPlayer.propTypes = {
+  addPlayer: PropTypes.func.isRequired
+};
+
+export default connect(
+  null,
+  { addPlayer }
+)(AddPlayer);

@@ -1,25 +1,27 @@
 import React from 'react';
+
 import BoardCards from './components/BoardCards';
 import CroupierOrder from './components/CroupierOrder';
 import Players from './components/Players';
+
 import './App.css';
 
-// const state = {
-//   players = [],
-//   cards = []
-// }
+import { Provider } from 'react-redux';
+import store from './store';
 
 function App() {
   return (
-    <div className='App'>
-      <h1>Poker Croupier</h1>
+    <Provider store={store}>
+      <div className='App'>
+        <h1>Poker Croupier</h1>
 
-      <BoardCards />
+        <BoardCards />
 
-      <Players />
+        <Players />
 
-      <CroupierOrder />
-    </div>
+        <CroupierOrder />
+      </div>
+    </Provider>
   );
 }
 
