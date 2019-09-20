@@ -1,4 +1,4 @@
-import { MIX, FLOP, TURN, RIVER } from './types';
+import { MIX, PREPARE_BOARD_CARDS, SET_GAME_ROUND } from './types';
 
 import MixedCards from '../utils/mixedCards';
 
@@ -11,8 +11,18 @@ export const mixCards = () => async dispatch => {
   });
 };
 
-// showFlop
+// Prepare board cards
+export const prepareBoardCards = boardCards => async dispatch => {
+  dispatch({
+    type: PREPARE_BOARD_CARDS,
+    payload: boardCards
+  });
+};
 
-// showTurn
-
-// shoRiver
+// Set game round
+export const setGameRound = roundName => async dispatch => {
+  dispatch({
+    type: SET_GAME_ROUND,
+    payload: roundName
+  });
+};
