@@ -13,13 +13,28 @@ const PlayerModal = ({
   currentPlayer,
   setCurrentPlayer,
   updatePlayerName,
-  deletePlayer
+  deletePlayer,
+  players
 }) => {
   const [name, setName] = useState(currentPlayer);
 
   useEffect(() => {
     setName(currentPlayer);
   }, [currentPlayer]);
+
+  let playerCards;
+  if (name) {
+    playerCards = players.map(player => {
+      if (player.name === name) {
+        return (
+          <div key={player.name} className='playerCards'>
+            <div className={`card ${player.cards[0]}`}></div>
+            <div className={`card ${player.cards[1]}`}></div>
+          </div>
+        );
+      }
+    });
+  }
 
   const handleChangeName = e => {
     const oldName = name;
@@ -39,10 +54,9 @@ const PlayerModal = ({
   return (
     <form id='add-player-modal' className='modal'>
       <input type='text' value={name ? name : ''} onChange={handleChangeName} />
-      <div className='playerCards'>
-        <div className='card ace_hearts'></div>
-        <div className='card three_clubs'></div>
-      </div>
+
+      {playerCards}
+
       <input type='submit' value='Remove player' onClick={handleRemovePlayer} />
     </form>
   );
@@ -52,11 +66,13 @@ PlayerModal.propTypes = {
   currentPlayer: PropTypes.string,
   setCurrentPlayer: PropTypes.func.isRequired,
   updatePlayerName: PropTypes.func.isRequired,
-  deletePlayer: PropTypes.func.isRequired
+  deletePlayer: PropTypes.func.isRequired,
+  players: PropTypes.array
 };
 
 const mapStateToProps = state => ({
-  currentPlayer: state.player.currentPlayer
+  currentPlayer: state.player.currentPlayer,
+  players: state.player.players
 });
 
 export default connect(

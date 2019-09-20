@@ -1,14 +1,18 @@
-import { SET_LOADING } from './types';
+import { MIX, FLOP, TURN, RIVER } from './types';
 
-// distribute
+import MixedCards from '../utils/mixedCards';
+
+// Mix cards
+export const mixCards = () => async dispatch => {
+  const mixedCards = new MixedCards();
+  dispatch({
+    type: MIX,
+    payload: mixedCards.mixedCards
+  });
+};
 
 // showFlop
 
 // showTurn
 
 // shoRiver
-
-// Set loading to true
-export const setLoading = () => {
-  return { type: SET_LOADING };
-};

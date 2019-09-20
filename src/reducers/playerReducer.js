@@ -2,14 +2,13 @@ import {
   ADD_PLAYER,
   SET_CURRENT_PLAYER,
   UPDATE_PLAYER_NAME,
-  DELETE_PLAYER
+  DELETE_PLAYER,
+  DISTRIBUTE
 } from '../actions/types';
 
 const initialSate = {
   players: [{ name: 'Player 1', cards: [] }, { name: 'Player 2', cards: [] }],
   currentPlayer: null
-  // loading: false,
-  // error: null
 };
 
 export default (state = initialSate, action) => {
@@ -29,7 +28,6 @@ export default (state = initialSate, action) => {
           ...state.players,
           { name: `Player ${playerNumber}`, cards: [] }
         ]
-        // loading: false
       };
     case SET_CURRENT_PLAYER:
       return {
@@ -59,6 +57,11 @@ export default (state = initialSate, action) => {
             return player;
           }
         })
+      };
+    case DISTRIBUTE:
+      return {
+        ...state,
+        players: action.payload
       };
     default:
       return state;

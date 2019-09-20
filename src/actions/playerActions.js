@@ -2,7 +2,8 @@ import {
   ADD_PLAYER,
   SET_CURRENT_PLAYER,
   UPDATE_PLAYER_NAME,
-  DELETE_PLAYER
+  DELETE_PLAYER,
+  DISTRIBUTE
 } from './types';
 
 // Add new player
@@ -36,7 +37,10 @@ export const deletePlayer = playerName => async dispatch => {
   });
 };
 
-// Set loading to true
-// export const setLoading = () => {
-//   return { type: SET_LOADING };
-// };
+// Distribute cards to player
+export const distribute = players => async dispatch => {
+  dispatch({
+    type: DISTRIBUTE,
+    payload: players
+  });
+};
