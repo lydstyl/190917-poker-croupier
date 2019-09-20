@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
@@ -6,9 +6,9 @@ import Player from './Player';
 import AddPlayer from './AddPlayer';
 
 const Players = ({ players }) => {
-  players = players.map((player, index) => (
-    <Player key={index} name={player.name} />
-  ));
+  players = players.map(player => {
+    return <Player key={player.name} player={player} />;
+  });
 
   return (
     <div className='players'>

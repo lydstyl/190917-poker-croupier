@@ -5,7 +5,6 @@ This app was also created to practice with Redux.js.
 
 ## To do
 
-- edit player
 - remove player
 - distribute
 - flop

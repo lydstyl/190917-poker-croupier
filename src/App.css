@@ -37,9 +37,13 @@ h1 {
   height: 24px;
   margin-bottom: 12px;
   background-color: #6abf69;
+  color: black;
   border: none;
   border-radius: 2px;
   box-shadow: 2px 6px 9px 1px rgba(0, 0, 0, 0.5);
+}
+.player .material-icons {
+  font-size: 14px;
 }
 .player:hover {
   color: white;

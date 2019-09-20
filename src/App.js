@@ -5,6 +5,7 @@ import M from 'materialize-css/dist/js/materialize.min.js';
 import BoardCards from './components/BoardCards';
 import CroupierOrder from './components/CroupierOrder';
 import Players from './components/Players';
+import PlayerModal from './components/PlayerModal';
 
 import 'materialize-css/dist/css/materialize.min.css';
 import './App.css';
@@ -24,6 +25,8 @@ function App() {
         <BoardCards />
 
         <Players />
+
+        <PlayerModal />
 
         <CroupierOrder />
       </div>
