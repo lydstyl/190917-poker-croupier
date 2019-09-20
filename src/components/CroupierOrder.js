@@ -26,7 +26,7 @@ const CroupierOrder = ({
       mixCards();
       M.toast({ html: 'Cards mixed' });
     }
-  }, []);
+  });
 
   const handleClick = () => {
     switch (gameStep) {
@@ -35,6 +35,7 @@ const CroupierOrder = ({
         players.map(player => {
           player.cards[0] = cards.pop();
           player.cards[1] = cards.pop();
+          return player;
         });
         distribute(players);
         M.toast({ html: 'Cards distribued to players' });

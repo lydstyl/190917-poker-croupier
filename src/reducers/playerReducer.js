@@ -52,11 +52,14 @@ export default (state = initialSate, action) => {
     case DELETE_PLAYER:
       return {
         ...state,
-        players: state.players.filter(player => {
-          if (player.name !== action.payload) {
-            return player;
-          }
-        })
+        // players: state.players.filter(player => {
+        //   if (player.name !== action.payload) {
+        //     return player;
+        //   }
+        // })
+        players: state.players.filter(player =>
+          player.name !== action.payload ? player : null
+        )
       };
     case DISTRIBUTE:
       return {

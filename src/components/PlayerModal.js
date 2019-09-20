@@ -24,16 +24,14 @@ const PlayerModal = ({
 
   let playerCards;
   if (name) {
-    playerCards = players.map(player => {
-      if (player.name === name) {
-        return (
-          <div key={player.name} className='playerCards'>
-            <div className={`card ${player.cards[0]}`}></div>
-            <div className={`card ${player.cards[1]}`}></div>
-          </div>
-        );
-      }
-    });
+    playerCards = players.map(player =>
+      player.name === name ? (
+        <div key={player.name} className='playerCards'>
+          <div className={`card ${player.cards[0]}`}></div>
+          <div className={`card ${player.cards[1]}`}></div>
+        </div>
+      ) : null
+    );
   }
 
   const handleChangeName = e => {
