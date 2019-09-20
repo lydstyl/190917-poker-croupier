@@ -15,7 +15,14 @@ const initialSate = {
 export default (state = initialSate, action) => {
   switch (action.type) {
     case ADD_PLAYER:
-      const playerNumber = state.players.length + 1;
+      let playerNumber = state.players.length + 1;
+
+      state.players.forEach(player => {
+        if (`Player ${playerNumber}` === player.name) {
+          playerNumber = playerNumber + ' bis';
+        }
+      });
+
       return {
         ...state,
         players: [
@@ -30,6 +37,11 @@ export default (state = initialSate, action) => {
         currentPlayer: action.payload
       };
     case UPDATE_PLAYER_NAME:
+      state.players.forEach(player => {
+        if (action.payload.newName === player.name) {
+          action.payload.newName = action.payload.newName + ' bis';
+        }
+      });
       return {
         ...state,
         players: state.players.map(player => {

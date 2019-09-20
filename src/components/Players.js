@@ -12,9 +12,9 @@ const Players = ({ players }) => {
 
   return (
     <div className='players'>
-      {players}
-
       <AddPlayer />
+
+      {players}
     </div>
   );
 };
