@@ -1,7 +1,8 @@
 import {
   ADD_PLAYER,
   SET_CURRENT_PLAYER,
-  UPDATE_PLAYER_NAME
+  UPDATE_PLAYER_NAME,
+  DELETE_PLAYER
 } from '../actions/types';
 
 const initialSate = {
@@ -36,6 +37,15 @@ export default (state = initialSate, action) => {
             player.name = action.payload.newName;
           }
           return player;
+        })
+      };
+    case DELETE_PLAYER:
+      return {
+        ...state,
+        players: state.players.filter(player => {
+          if (player.name !== action.payload) {
+            return player;
+          }
         })
       };
     default:

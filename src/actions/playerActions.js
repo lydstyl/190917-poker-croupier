@@ -1,4 +1,9 @@
-import { ADD_PLAYER, SET_CURRENT_PLAYER, UPDATE_PLAYER_NAME } from './types';
+import {
+  ADD_PLAYER,
+  SET_CURRENT_PLAYER,
+  UPDATE_PLAYER_NAME,
+  DELETE_PLAYER
+} from './types';
 
 // Add new player
 export const addPlayer = () => async dispatch => {
@@ -24,6 +29,12 @@ export const updatePlayerName = (oldName, newName) => async dispatch => {
 };
 
 // Delete player
+export const deletePlayer = playerName => async dispatch => {
+  dispatch({
+    type: DELETE_PLAYER,
+    payload: playerName
+  });
+};
 
 // Set loading to true
 // export const setLoading = () => {

@@ -14,8 +14,11 @@ const AddPlayer = ({ playersLen, addPlayer }) => {
   };
 
   return (
-    <button className={`player ${playersLen === 12 && 'hide'}`} onClick={onAdd}>
-      +
+    <button
+      className={`red player ${playersLen === 12 && 'hide'}`}
+      onClick={onAdd}
+    >
+      <i className='material-icons'>person_add</i>
     </button>
   );
 };
