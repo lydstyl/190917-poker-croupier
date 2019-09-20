@@ -1,10 +1,10 @@
 import { ADD_PLAYER, SET_LOADING } from './types';
 
 // Add new player
-export const addPlayer = player => async dispatch => {
+export const addPlayer = () => async dispatch => {
   dispatch({
-    type: ADD_PLAYER,
-    payload: player
+    type: ADD_PLAYER
+    // payload: player
   });
 };
 

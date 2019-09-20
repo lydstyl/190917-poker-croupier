@@ -5,9 +5,10 @@ This app was also created to practice with Redux.js.
 
 ## To do
 
-- add player
+- edit player
 - remove player
 - distribute
 - flop
 - turn
 - river
+- final css (try to remove code in App.css because of Materialize)

@@ -1,11 +1,10 @@
 * {
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
 }
 body {
   margin: 0;
   background-color: #076324;
   background-image: url('http://www.transparenttextures.com/patterns/black-felt.png');
-  font-family: Arial;
   text-align: center;
 }
 .App {
@@ -76,6 +75,7 @@ button.croupier-order:hover {
 }
 h2 {
   margin: 0;
+  font-size: 1.5em;
 }
 
 .ace_clubs {

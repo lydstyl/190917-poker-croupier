@@ -1,23 +1,33 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+
 import Player from './Player';
 import AddPlayer from './AddPlayer';
 
-const Players = () => {
+const Players = ({ players }) => {
+  players = players.map((player, index) => (
+    <Player key={index} name={player.name} />
+  ));
+
   return (
     <div className='players'>
-      <Player name='Robert' />
-      <Player name='Antoine' />
-      <Player name='Oliver' />
-      <Player name='p4' />
-      <Player name='p5' />
-      <Player name='p6' />
-      <Player name='p7' />
-      <Player name='p8' />
-      <Player name='p9' />
+      {players}
 
       <AddPlayer />
     </div>
   );
 };
 
-export default Players;
+Players.propTypes = {
+  players: PropTypes.array.isRequired
+};
+
+const mapStateToProps = state => ({
+  players: state.player.players
+});
+
+export default connect(
+  mapStateToProps,
+  null
+)(Players);

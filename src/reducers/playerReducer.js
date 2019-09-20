@@ -1,7 +1,7 @@
 import { SET_LOADING, ADD_PLAYER } from '../actions/types';
 
 const initialSate = {
-  players: [],
+  players: [{ name: 'Player 1', cards: [] }, { name: 'Player 2', cards: [] }],
   loading: false,
   error: null
 };
@@ -14,9 +14,13 @@ export default (state = initialSate, action) => {
         loading: true
       };
     case ADD_PLAYER:
+      const playerNumber = state.players.length + 1;
       return {
         ...state,
-        players: [...state.players, action.payload],
+        players: [
+          ...state.players,
+          { name: `Player ${playerNumber}`, cards: [] }
+        ],
         loading: false
       };
     default:
