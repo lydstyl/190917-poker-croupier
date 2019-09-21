@@ -36,11 +36,15 @@ const PlayerModal = ({
   }
 
   const handleChangeName = e => {
-    const oldName = name;
     const newName = e.target.value;
-    setName(newName);
-    setCurrentPlayer(newName);
-    updatePlayerName(oldName, newName);
+    if (newName.length < 14) {
+      const oldName = name;
+      setName(newName);
+      setCurrentPlayer(newName);
+      updatePlayerName(oldName, newName);
+    } else {
+      M.toast({ html: 'The name is too long' });
+    }
   };
 
   const handleRemovePlayer = e => {
