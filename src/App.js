@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Provider } from 'react-redux';
 import M from 'materialize-css/dist/js/materialize.min.js';
 
+import Title from './components/Title';
 import BoardCards from './components/BoardCards';
 import CroupierOrder from './components/CroupierOrder';
 import Players from './components/Players';
@@ -20,7 +21,7 @@ function App() {
   return (
     <Provider store={store}>
       <div className='App'>
-        <h1>Poker Croupier</h1>
+        <Title />
 
         <BoardCards />
 

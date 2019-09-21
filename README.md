@@ -5,6 +5,5 @@ This app was also created to practice with Redux.js.
 
 ## To do
 
-- https://material.io/resources/icons/?icon=storefront&style=round
-- final css (try to remove code in App.css because of Materialize)
 - max length for player name input
+- final css (try to remove code in App.css because of Materialize)
