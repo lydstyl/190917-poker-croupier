@@ -43,6 +43,7 @@ const PlayerModal = ({
   };
 
   const handleRemovePlayer = e => {
+    e.preventDefault();
     deletePlayer(currentPlayer);
     e.target.parentNode.style.display = 'none';
     document.querySelector('.modal-overlay').click();

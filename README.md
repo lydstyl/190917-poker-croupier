@@ -5,7 +5,7 @@ This app was also created to practice with Redux.js.
 
 ## To do
 
-- debug remove player
+- show remove player just befor distribute (round 0)
 - debug player cards
   - DISTRI
   - PREPARE BOARD
