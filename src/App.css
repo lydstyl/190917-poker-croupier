@@ -37,7 +37,9 @@ h1 {
 .player {
   min-width: calc(100% / 4 - 8 * 2px);
   height: 24px;
+  line-height: 24px;
   margin-bottom: 12px;
+  padding: 0 8px;
   background-color: #6abf69;
   color: black;
   border: none;
@@ -77,6 +79,12 @@ h1 {
 #add-player-modal {
   background-color: #076324;
   background-image: url('http://www.transparenttextures.com/patterns/black-felt.png');
+  border-radius: 6px;
+}
+@media screen and (min-width: 567px) {
+  #add-player-modal {
+    width: 44%;
+  }
 }
 #add-player-modal [type='text'] {
   color: white;
