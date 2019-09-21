@@ -5,10 +5,6 @@ This app was also created to practice with Redux.js.
 
 ## To do
 
-- debug player cards
-  - DISTRI
-  - PREPARE BOARD
-  - SET_CURRENT_PLAYER?
 - https://material.io/resources/icons/?icon=storefront&style=round
 - final css (try to remove code in App.css because of Materialize)
 - max length for player name input
