@@ -14,7 +14,8 @@ const PlayerModal = ({
   setCurrentPlayer,
   updatePlayerName,
   deletePlayer,
-  players
+  players,
+  round
 }) => {
   const [name, setName] = useState(currentPlayer);
 
@@ -56,7 +57,13 @@ const PlayerModal = ({
 
       {playerCards}
 
-      <input type='submit' value='Remove player' onClick={handleRemovePlayer} />
+      {!round && (
+        <input
+          type='submit'
+          value='Remove player'
+          onClick={handleRemovePlayer}
+        />
+      )}
     </form>
   );
 };
@@ -66,12 +73,14 @@ PlayerModal.propTypes = {
   setCurrentPlayer: PropTypes.func.isRequired,
   updatePlayerName: PropTypes.func.isRequired,
   deletePlayer: PropTypes.func.isRequired,
-  players: PropTypes.array
+  players: PropTypes.array,
+  round: PropTypes.number.isRequired
 };
 
 const mapStateToProps = state => ({
   currentPlayer: state.player.currentPlayer,
-  players: state.player.players
+  players: state.player.players,
+  round: state.card.round
 });
 
 export default connect(
