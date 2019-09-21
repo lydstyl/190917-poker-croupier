@@ -63,6 +63,7 @@ const PlayerModal = ({
 
       {!round && (
         <input
+          className='red'
           type='submit'
           value='Remove player'
           onClick={handleRemovePlayer}
