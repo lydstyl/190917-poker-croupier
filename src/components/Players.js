@@ -5,14 +5,14 @@ import PropTypes from 'prop-types';
 import Player from './Player';
 import AddPlayer from './AddPlayer';
 
-const Players = ({ players }) => {
+const Players = ({ players, round }) => {
   players = players.map(player => {
     return <Player key={player.name} player={player} />;
   });
 
   return (
     <div className='players'>
-      <AddPlayer />
+      {!round && <AddPlayer />}
 
       {players}
     </div>
@@ -20,11 +20,13 @@ const Players = ({ players }) => {
 };
 
 Players.propTypes = {
-  players: PropTypes.array.isRequired
+  players: PropTypes.array.isRequired,
+  round: PropTypes.number.isRequired
 };
 
 const mapStateToProps = state => ({
-  players: state.player.players
+  players: state.player.players,
+  round: state.card.round
 });
 
 export default connect(

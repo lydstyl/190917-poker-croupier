@@ -5,7 +5,6 @@ This app was also created to practice with Redux.js.
 
 ## To do
 
-- show add player button only at round 0
 - debug player cards
   - DISTRI
   - PREPARE BOARD
